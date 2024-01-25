@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{01116F84-34FE-475D-8B56-882E25BCE67F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>RM</RootNamespace>
+    <AssemblyName>RM</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EPPlus, Version=7.0.1.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.7.0.1\lib\net462\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.Interfaces, Version=6.1.1.0, Culture=neutral, PublicKeyToken=a694d7f3b0907a61, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.Interfaces.6.1.1\lib\net462\EPPlus.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.System.Drawing, Version=6.1.1.0, Culture=neutral, PublicKeyToken=2308d35469c9bac0, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.System.Drawing.6.1.1\lib\net462\EPPlus.System.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="FontAwesome.Sharp, Version=6.3.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.6.3.0\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.1.4.1\lib\net46\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAL\BillPresenter.cs" />
+    <Compile Include="DAL\BookingPresenter.cs" />
+    <Compile Include="DAL\DataProvider.cs" />
+    <Compile Include="DAL\FoodPresenter.cs" />
+    <Compile Include="DAL\MenuPresenter.cs" />
+    <Compile Include="DAL\StaffPresenter.cs" />
+    <Compile Include="Export\ExportExcelFile.cs" />
+    <Compile Include="Views\Admin\Bill\AddArea.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\Bill\AddArea.Designer.cs">
+      <DependentUpon>AddArea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\Bill\AddMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\Bill\AddMenu.Designer.cs">
+      <DependentUpon>AddMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\Bill\CardBill.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\Bill\CardBill.Designer.cs">
+      <DependentUpon>CardBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\Bill\fBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\Bill\fBill.Designer.cs">
+      <DependentUpon>fBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\Food\AddComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\Food\AddComponent.Designer.cs">
+      <DependentUpon>AddComponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\Food\Component.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\Food\Component.Designer.cs">
+      <DependentUpon>Component.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\Food\fFood.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\Food\fFood.Designer.cs">
+      <DependentUpon>fFood.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\Food\FoodCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\Food\FoodCard.Designer.cs">
+      <DependentUpon>FoodCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\Menu\CardMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\Menu\CardMenu.Designer.cs">
+      <DependentUpon>CardMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\Menu\fMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\Menu\fMenu.Designer.cs">
+      <DependentUpon>fMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\Staff\CardStaff.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\Staff\CardStaff.Designer.cs">
+      <DependentUpon>CardStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\Staff\fStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\Staff\fStaff.Designer.cs">
+      <DependentUpon>fStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Booking\BillOfDay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Booking\BillOfDay.Designer.cs">
+      <DependentUpon>BillOfDay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Booking\fBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Booking\fBooking.Designer.cs">
+      <DependentUpon>fBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Booking\Area.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Booking\Area.Designer.cs">
+      <DependentUpon>Area.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\fHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\fHome.Designer.cs">
+      <DependentUpon>fHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\fMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\fMain.Designer.cs">
+      <DependentUpon>fMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\fLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\fLogin.Designer.cs">
+      <DependentUpon>fLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Views\Admin\Bill\AddArea.resx">
+      <DependentUpon>AddArea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Admin\Bill\AddMenu.resx">
+      <DependentUpon>AddMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Admin\Bill\CardBill.resx">
+      <DependentUpon>CardBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Admin\Bill\fBill.resx">
+      <DependentUpon>fBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Admin\Food\AddComponent.resx">
+      <DependentUpon>AddComponent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Admin\Food\Component.resx">
+      <DependentUpon>Component.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Admin\Food\fFood.resx">
+      <DependentUpon>fFood.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Admin\Food\FoodCard.resx">
+      <DependentUpon>FoodCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Admin\Menu\CardMenu.resx">
+      <DependentUpon>CardMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Admin\Menu\fMenu.resx">
+      <DependentUpon>fMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Admin\Staff\CardStaff.resx">
+      <DependentUpon>CardStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Admin\Staff\fStaff.resx">
+      <DependentUpon>fStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Booking\Area.resx">
+      <DependentUpon>Area.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Booking\BillOfDay.resx">
+      <DependentUpon>BillOfDay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Booking\fBooking.resx">
+      <DependentUpon>fBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\fHome.resx">
+      <DependentUpon>fHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\fLogin.resx">
+      <DependentUpon>fLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Views\fMain.resx">
+      <DependentUpon>fMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg-login.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg-login1.jpg" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\bg_login-2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img_home.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
